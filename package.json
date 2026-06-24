@@ -1,23 +1,43 @@
 {
-  "name": "mafia-game-frontend",
-  "version": "1.0.0",
-  "description": "Mafia Game Telegram Mini App Frontend",
-  "type": "module",
+  "name": "electron-to-chromium",
+  "version": "1.5.378",
+  "description": "Provides a list of electron-to-chromium version mappings",
+  "main": "index.js",
+  "files": [
+    "versions.js",
+    "full-versions.js",
+    "chromium-versions.js",
+    "full-chromium-versions.js",
+    "versions.json",
+    "full-versions.json",
+    "chromium-versions.json",
+    "full-chromium-versions.json",
+    "LICENSE"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "type-check": "tsc --noEmit"
+    "build": "node build.mjs",
+    "update": "node automated-update.js",
+    "test": "nyc ava --verbose",
+    "report": "nyc report --reporter=text-lcov > coverage.lcov"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kilian/electron-to-chromium.git"
   },
+  "keywords": [
+    "electron",
+    "chrome",
+    "chromium",
+    "browserslist",
+    "browserlist"
+  ],
+  "author": "Kilian Valkhof",
+  "license": "ISC",
   "devDependencies": {
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11"
+    "ava": "^7.0.0",
+    "compare-versions": "^6.1.1",
+    "node-fetch": "^3.3.2",
+    "nyc": "^18.0.0",
+    "shelljs": "^0.10.0"
   }
 }
